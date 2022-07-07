@@ -1335,6 +1335,7 @@ class SIPClient():
         byeRequest += f"User-Agent: pyVoIP {pyVoIP.__version__}\r\n"
         byeRequest += f"Allow: {(', '.join(pyVoIP.SIPCompatibleMethods))}\r\n"
         byeRequest += "Content-Length: 0\r\n\r\n"
+        byeRequest += f"Route: <sip:{self.server};lr>\n"
 
         return byeRequest
 
